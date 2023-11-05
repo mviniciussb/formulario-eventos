@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Crie seu evento</title>
+</head>
+<body>
+    <div id="page">
+        <header>
+                <h1>Crie e compartilhe seu evento.</h1>
+                <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
+        </header>
+    </div>
+ 
+    <form id="form" action="cadastro.js" method="get">
+        <fieldset id="informacoes">
+            <legend>Informações do evento</legend>
+
+            <div class="input-wrapper">
+                <label for="event-title">Título do evento<span>(mínimo 8 caracteres)</span></label>
+                <input type="text" id="event-title" required minlength="8">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="event-link">Link do evento<span>(comece com https://)</span></label>
+                <input type="url" id="event-link">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="whatsapp-num">Whatsapp para contato<span>(somente números)</span></label>
+                <input type="number" id="whatsapp-num">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="area-extra">Informaçõe extras</label>
+                <textarea  id="area-extra" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="category">Categoria</label>
+                <select name="lista-select" id="category" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="social">Social</option>
+                    <option value="corporativo">Corporativo</option>
+                    <option value="religioso">Religioso</option>
+                    <option value="academico">Acadêmicos/Educacionais</option>
+                    <option value="esportivo">Esportivo</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="privacidade">
+            <legend>Prividade</legend>
+
+            <div class="input-wrapper">
+                <label for="email">E-mail do administrador<span>(digite um email válido)</span></label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="password">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label>
+                <input type="password" id="password" required minlength="8">
+            </div>
+
+            <div id="checkbox">
+                <input type="checkbox" id="check">
+                <label for="check">Evento privado</label>
+            </div>
+        </fieldset>
+
+        <fieldset id="data">
+            <legend>Dia e hora</legend>
+        
+            <div class="input-wrapper">
+                <label for="date">Data</label>
+                <input type="date" id="date">
+            </div>
+
+            <div class="input-wrapper" class="horas">
+                <label for="inicio">Das</label>
+                <input type="time" id="inicio">
+            </div>
+
+            <div class="input-wrapper" class="horas">
+                <label for="fim">Até</label>
+                <input type="time" id="fim">
+            </div>
+        </fieldset>
+    </form>
+    
+    <footer>
+        <div id="subm">
+            <input form="form" type="submit" value="Salvar evento">
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+
+
