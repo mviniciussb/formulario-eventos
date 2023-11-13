@@ -165,16 +165,43 @@ fieldset legend{
 
 }
 
-#checkbox{
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
+#checkbox input[type=checkbox]{
+    opacity: 0;
 
-
-#check{
     width: 24px;
     height: 24px;
+
+
+    position: absolute;
+}
+
+#checkbox label{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#checkbox label::before{
+    content: '';
+    display: inline-block;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+
+    width: 24px;
+    height: 24px;
+
+    background: #FAFAFC;
+
+    position: relative;
+    
+}
+
+#checkbox input[type=checkbox]:checked + label::before{
+    background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='24' height='24' rx='8' fill='%23FAFAFC' stroke='%23E6E6F0'/%3E%3Cg clip-path='url(%23clip0_2702_21)'%3E%3Cpath d='M10 17.17L5.83 13L4.41 14.41L10 20L22 8L20.59 6.59L10 17.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2702_21'%3E%3Crect width='24' height='24' fill='white' transform='translate(1 1)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+#checkbox input[type=checkbox]:focus + label:before{
+    outline: 2px solid black;
 }
 
 #data{
@@ -225,6 +252,6 @@ footer div input:hover{
     cursor: pointer;
 }
 
-input:invalid{
+/* input:invalid{
     border: 1px solid red;
-}
+} */
